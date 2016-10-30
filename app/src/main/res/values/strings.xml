@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">RNAtor</string>
+    <string name="faq_title">FAQ</string>
+    <string name="references_title">References</string>
+    <string name="about_us_title">About Us</string>
+    <string name="transcriptome_size_label">Transcriptome Size(mb)</string>
+    <string name="fold_change_label">Fold Change</string>
+    <string name="replicates_label">Replicates</string>
+    <string name="search_by_organism">Search By Organism</string>
+    <string name="custom_input">Custom Input</string>
+    <string name="item_search">Search</string>
+    <string name="item_custom">Custom</string>
+    <string name="submit">Done</string>
+    <string name="update">Updates</string>
+    <string name="download">Download</string>
+    <string name="export_to_pdf">Export to Pdf</string>
+    <string name="send_in_mail">Send in mail</string>
+
+</resources>

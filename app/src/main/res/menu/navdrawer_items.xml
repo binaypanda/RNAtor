@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/main"
+            android:title="@string/app_name"
+            android:icon="@drawable/ic_home_black_24dp" />
+
+        <item android:id="@+id/updates"
+            android:title="@string/update"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            app:actionLayout="@layout/update_counter_layout"/>
+
+        <item android:id="@+id/faq"
+            android:title="@string/faq_title"
+            android:icon="@drawable/ic_help_black_24dp" />
+
+        <item android:id="@+id/ref"
+            android:title="@string/references_title"
+            android:icon="@drawable/ic_description_black_24dp" />
+
+        <item android:id="@+id/about"
+            android:title="@string/about_us_title"
+            android:icon="@drawable/ic_info_outline_black_24dp" />
+    </group>
+</menu>
