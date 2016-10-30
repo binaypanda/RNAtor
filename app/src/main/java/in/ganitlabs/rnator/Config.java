@@ -33,6 +33,8 @@ public interface Config{
         put(R.id.about, "about.html");
     }};
 
+    String[] IMAGE_NAMES = new String[]{"download_v1.jpg"};
+
     HashMap<Integer, Class> ROUTES = new HashMap<Integer, Class>(){{
         put(R.id.main, FragmentMain.class);
         put(R.id.updates, FragmentUpdates.class);

@@ -36,6 +36,7 @@ import java.util.List;
 
 import in.ganitlabs.rnator.Helpers.DataBaseHelper;
 import in.ganitlabs.rnator.Helpers.FileHelper;
+import in.ganitlabs.rnator.Helpers.ImageHelper;
 import in.ganitlabs.rnator.Utils.TrackedCursor;
 import in.ganitlabs.rnator.Utils.VolleySingleton;
 import in.ganitlabs.rnator.Helpers.HTMLHelper;
@@ -128,10 +129,9 @@ public class MainActivity extends AppCompatActivity implements Config {
                         int localVersion;
                         if(fileName.endsWith(".db")) {
                             localVersion = DataBaseHelper.getInstance().getVersion();
-                        }else if(fileName.endsWith(".html")){
+                        }else if(helperDirectory.containsKey(fileName)){
                             localVersion = helperDirectory.get(fileName).getVersion();
-                        }else {
-                            // get versions for other file types if needed
+                        }else{
                             localVersion = 0;
                         }
                         int updateVersion = update.getInt("version");
@@ -162,10 +162,7 @@ public class MainActivity extends AppCompatActivity implements Config {
             public void onErrorResponse(VolleyError error) {
             }
         });
-        VolleySingleton.getInstance(this).addToRequestQueue(jsonArrRequest);
-
         final Context context = this;
-
         for (String s : HTML_MENU_FILE_MAPPING.values()){
             try {
                 helperDirectory.put(s, new HTMLHelper(context, s));
@@ -173,6 +170,16 @@ public class MainActivity extends AppCompatActivity implements Config {
                 e.printStackTrace();
             }
         }
+
+        for (String s : IMAGE_NAMES){
+            try {
+                helperDirectory.put(s, new ImageHelper(context, s));
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        VolleySingleton.getInstance(this).addToRequestQueue(jsonArrRequest);
     }
 
     public Fragment getVisibleFragment(){
