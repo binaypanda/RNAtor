@@ -3,30 +3,17 @@ package in.ganitlabs.rnator.Helpers;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Element;
-import com.itextpdf.text.Phrase;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import in.ganitlabs.rnator.R;
 
@@ -63,25 +50,25 @@ public class Helper {
         return res;
     }
 
-    public static void addTable(Document document, int colSize, String[] cellStrings) throws DocumentException {
-        PdfPTable table = new PdfPTable(colSize);
-//        int count = 0;
-        for (String cellVal : cellStrings) {
-            PdfPCell cell = new PdfPCell(new Phrase(cellVal));
-//            if (rowSpanMap.containsKey(count)) {
-//                cell.setRowspan(rowSpanMap.get(count));
-//            }
-            cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-            cell.setVerticalAlignment(Element.ALIGN_CENTER);
-            table.addCell(cell);
-//            count++;
-        }
-        try {
-            document.add(table);
-        } catch (DocumentException e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void addTable(Document document, int colSize, String[] cellStrings) throws DocumentException {
+//        PdfPTable table = new PdfPTable(colSize);
+////        int count = 0;
+//        for (String cellVal : cellStrings) {
+//            PdfPCell cell = new PdfPCell(new Phrase(cellVal));
+////            if (rowSpanMap.containsKey(count)) {
+////                cell.setRowspan(rowSpanMap.get(count));
+////            }
+//            cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+//            cell.setVerticalAlignment(Element.ALIGN_CENTER);
+//            table.addCell(cell);
+////            count++;
+//        }
+//        try {
+//            document.add(table);
+//        } catch (DocumentException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public static RelativeLayout createCell(Context context, String cellVal) {
         View container = LayoutInflater.from(context).inflate(R.layout.result_table_cell_layout, null);

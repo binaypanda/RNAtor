@@ -13,14 +13,14 @@
         android:layout_below="@+id/tvRes">
     </GridLayout>
 
-    <Button android:layout_width="match_parent" android:layout_above="@+id/btnPdf" android:layout_height="wrap_content" android:id="@+id/btnMail"
+    <Button android:layout_width="match_parent" android:layout_alignParentBottom="true" android:layout_height="wrap_content" android:id="@+id/btnMail"
         android:layout_margin="10dp"
         android:text="@string/send_in_mail"
         android:background="#0dbf66" />
 
-    <Button android:layout_width="match_parent" android:layout_alignParentBottom="true" android:layout_height="wrap_content" android:id="@+id/btnPdf"
-        android:layout_margin="10dp"
-        android:text="@string/export_to_pdf"
-        android:background="#0dbf66" />
+    <!--<Button android:layout_width="match_parent" android:layout_above="@+id/btnMail" android:layout_height="wrap_content" android:id="@+id/btnPdf"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:text="@string/export_to_pdf"-->
+        <!--android:background="#0dbf66" />-->
 
 </RelativeLayout>
